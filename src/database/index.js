@@ -9,9 +9,6 @@ const client = new Client({
   user: dbUser,
   password: dbPassword,
   database: 'nyoabbhg',
-  ssl: {
-    rejectUnauthorized: false,
-  },
 });
 
 client.connect();
