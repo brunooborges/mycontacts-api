@@ -1,5 +1,9 @@
 module.exports = (request, response, next) => {
-  const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+  const allowedOrigins = [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://mycontacts.up.railway.app',
+  ];
 
   const origin = request.header('Origin');
   const isAllowed = allowedOrigins.includes(origin);
