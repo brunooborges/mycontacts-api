@@ -3,6 +3,7 @@ module.exports = (request, response, next) => {
     'http://localhost:3000',
     'http://localhost:3001',
     'https://mycontacts.up.railway.app',
+    'https://mycontactsapi.up.railway.app',
   ];
 
   const origin = request.header('Origin');
