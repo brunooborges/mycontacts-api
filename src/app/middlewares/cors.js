@@ -2,8 +2,8 @@ module.exports = (request, response, next) => {
   const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://mycontacts.up.railway.app',
-    'https://mycontactsapi.up.railway.app',
+    'https://mycontacts.up.railway.app/',
+    'https://mycontactsapi.up.railway.app/',
   ];
 
   const origin = request.header('Origin');
@@ -16,5 +16,7 @@ module.exports = (request, response, next) => {
     response.setHeader('Access-Control-Max-Age', '10');
   }
 
+  console.log(response);
+  console.log(request);
   next();
 };
