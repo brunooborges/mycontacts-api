@@ -1,12 +1,11 @@
 const { Client } = require('pg');
 
-const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
 
 const client = new Client({
   host: 'babar.db.elephantsql.com',
   port: 5432,
-  user: dbUser,
+  user: 'nyoabbhg',
   password: dbPassword,
   database: 'nyoabbhg',
 });
