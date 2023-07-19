@@ -10,7 +10,7 @@ const dbPassword = process.env.DB_PASSWORD;
     user: dbUser,
     password: dbPassword,
     database: 'railway',
-    ssl: true,
+    ssl: false,
   });
 
   await client.connect();
