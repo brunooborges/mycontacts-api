@@ -4,6 +4,7 @@ module.exports = (request, response, next) => {
     'http://localhost:3001',
     'https://mycontacts.up.railway.app/',
     'https://mycontactsapi.up.railway.app/',
+    'https://mycontactsapi.up.railway.app/categories',
   ];
 
   const origin = request.header('Origin');
