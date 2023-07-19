@@ -3,17 +3,20 @@ const { Client } = require('pg');
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
 
-const client = new Client({
-  host: 'containers-us-west-139.railway.app',
-  port: 6108,
-  user: dbUser,
-  password: dbPassword,
-  database: 'railway',
-});
+(async () => {
+  const client = new Client({
+    host: 'containers-us-west-139.railway.app',
+    port: 6108,
+    user: dbUser,
+    password: dbPassword,
+    database: 'railway',
+    ssl: true,
+  });
 
-client.connect();
-
-exports.query = async (query, values) => {
-  const { rows } = await client.query(query, values);
-  return rows;
-};
+  await client.connect();
+  const res = await client.query('SELECT $1::text as connected', [
+    'Connection to postgres successful!',
+  ]);
+  console.log(res.rows[0].connected);
+  await client.end();
+})();
