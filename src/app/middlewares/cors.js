@@ -2,8 +2,8 @@ module.exports = (request, response, next) => {
   const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://brunooborges.github.io/mycontacts-front-end/',
-    'https://brunooborges.github.io/',
+    'https://brunooborges.github.io/mycontacts-front-end',
+    'https://brunooborges.github.io',
   ];
 
   const origin = request.header('Origin');
