@@ -3,6 +3,7 @@ module.exports = (request, response, next) => {
     'http://localhost:3000',
     'http://localhost:3001',
     'https://brunooborges.github.io/mycontacts-front-end/',
+    'https://brunooborges.github.io/',
   ];
 
   const origin = request.header('Origin');
