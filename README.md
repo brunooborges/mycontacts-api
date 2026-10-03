@@ -36,6 +36,8 @@ or two. Idle connections it drops are handled, so the API keeps running.
 
 - Build command: `yarn`
 - Start command: `yarn start`
+- Node: 18 or newer (`engines` in `package.json`, `.node-version` pins 20). Without a pin Render
+  falls back to Node 14, and the install fails on `express-rate-limit`.
 - Environment: set `DATABASE_URL` (use the database's *pooled* connection string if it offers one).
   Set `ALLOWED_ORIGINS` only if the front end is served from another origin.
 - A free Render service sleeps after 15 minutes without traffic and takes about a minute to wake.
