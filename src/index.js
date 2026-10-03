@@ -1,15 +1,15 @@
-const express = require('express');
-require('express-async-errors');
+const { createApp } = require('./app');
+const { loadConfig, assertConfig } = require('./config');
 
-const routes = require('./routes');
-const cors = require('./app/middlewares/cors');
-const errorHandler = require('./app/middlewares/errorHandler');
+const config = loadConfig();
 
-const app = express();
+assertConfig(config);
 
-app.use(express.json());
-app.use(cors);
-app.use(routes);
-app.use(errorHandler);
+const app = createApp({
+  allowedOrigins: config.allowedOrigins,
+  trustProxy: config.trustProxy,
+});
 
-app.listen(3001, () => console.log('Server started successfully'));
+app.listen(config.port, () => {
+  console.log(`Server started successfully on port ${config.port}`);
+});
